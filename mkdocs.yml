@@ -21,3 +21,8 @@ theme:
     toggle:
       icon: material/weather-night
       name: Switch to light mode
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/sayZhongWen

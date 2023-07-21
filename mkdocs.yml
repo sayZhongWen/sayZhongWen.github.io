@@ -1,0 +1,23 @@
+site_name: Dizzy_D
+nav:
+  - 废话主页: index.md
+  - 电子玫瑰:
+    - 笔墨传情: writing.md
+    - 灰色的树: scarf.md
+    - 夜雨声停: music.md
+#  - 难得学习:
+theme:
+  name: material
+  language: en
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    toggle:
+      icon: material//weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    primary: teal
+    scheme: slate
+    toggle:
+      icon: material/weather-night
+      name: Switch to light mode

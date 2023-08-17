@@ -6,7 +6,7 @@ nav:
     - 灰色的树: scarf.md
     - 夜雨声停: music.md
   - 难得学习:
-      - web前端学习: web_notes.md
+      - web前端学习: notes/web_notes.md
 theme:
   name: material
   language: en

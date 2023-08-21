@@ -70,7 +70,7 @@
             </tr>
         </table>
 
-   - 表单，action后加服务器网址，method表示数据提交方式：get把提交的数据使url可以看到，post看不到；get提交少量数据，post提交大量数据，name表单名称
+   - 表单，action后加服务器网址，method表示数据提交方式：get把提交的数据使url可以看到，post看不到；get提交少量数据，post提交大量数据（默认提交方式为get），name表单名称，Enter键也可以提交表单
 
         <form action="url" method="get|post" name="myform">
             <input> //添加输入框
@@ -78,8 +78,10 @@
             <br>
             Last name:<input type="text" name="lastname">
             Password:<input type="password" name="pwd"> //输入密码字符为·或*
-            <input type="submit" value="登录"> //提交按钮，可以修改按钮上的文字
-            <input type="button">
+            <input type="submit" value="登录"> // 提交按钮，可以修改按钮上的文字
+            <input type="button" value="按钮"> // button默认value为submit，但只是一个普通的按钮
+            <button type="">按钮</button> // type="submit"则该按钮为提交，"button"就是一个可点击的按钮，"reset"就是重置表单数据（清空），默认为"submit"
+     
         </form>
 
    - 块元素与行内元素（内联元素）
@@ -96,9 +98,9 @@
 
 行内块级元素：`button,img,input...`
    - `<div></div>`容器标签，给网页分块，使布局更清晰
-![](../img/h5旧标签.png)
-![](../img/h5新标签.png)
-上图中`<header></header>`表示头部，`<nav></nav>`导航，`<section></section>`章节、页眉、页脚等，`<aside></aside>`侧边栏，`<footer></footer>`脚部，`<article></article>`独立完整的内容块
+    ![](../img/h5旧标签.png)
+    ![](../img/h5新标签.png)
+    上图中`<header></header>`表示头部，`<nav></nav>`导航，`<section></section>`章节、页眉、页脚等，`<aside></aside>`侧边栏，`<footer></footer>`脚部，`<article></article>`独立完整的内容块
 
 ## css部分
 1. css语法规则：
@@ -145,7 +147,7 @@
                 }
     </li>
 
-    <li>元素选择器（标签选择器，一般描述元素的“共性”）</li>
+    <li>元素选择器（标签选择器，一般描述元素的“共性”）：将上述代码的*替换成p,h1等标签即可</li>
     <li>类选择器（针对你想要的标签使用，类名不能以数字开头，类选择器可以被多种标签使用，同一个标签可以使用多个类）
     
             <p class="oneclass">你好</p>
@@ -160,6 +162,342 @@
     
     </li>
     <li>局部“个性”**优先于**全局</li>
+    <li>ID选择器：ID名称不能以数字开头，且<strong>只能使用一次</strong>，优先级最高
+   
+            <style>
+                #mytext{
+                    color:red;
+                    font-size:30px;
+                }
+            </style> // 写在<head>里
+                  <p id="mytext">你好</p> // 在<body>中使用时
+
+    </li>
+    <li>合并选择器：不同类型的标签使用同一样式
+    
+        p,h3{
+            height:30px;
+        }
+
+    </li>
+    <li>选择器的优先级（css中权重用数字来衡量）：行内样式 > id选择器 > 类选择器 > 元素选择器
+   
+    |选择器类型|权重|
+    |--------|---|
+    |元素选择器|1|
+    |class选择器|10|
+    |id选择器|100|
+    |内联样式|1000|
+    
+    如果有两个相同优先级的选择器，那么就按顺序生效，后面的会把前面的覆盖
+    </li>
     </ul>
       
-4. 
+4. color的设置方式：
+    <ul>
+    <li>英文描述red,blue</li>
+    <li>十六进制描述#0000ff（推荐）</li>
+    <li>红绿蓝rgb(0,255,0)</li>
+    <li>rgba（a表示透明度，0~1，1是不透明）</li>
+    </ul>
+5. 关于字体：Chrome浏览器可接受的最小字体是12px
+
+    `font-weight="normal/bold/bolder/lighter/100~900"`设置文字粗细（粗/更粗/更细/400默认，900bold，Chrome浏览器上最高能显示700）
+
+    `font-style="normal/italic"`设置斜体
+
+    `font-family`指定字体样式`font-family:"Microsoft YaHei","Simsun","Simhei";`
+
+6. 关于背景：
+    
+        <div class="box"></div>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: #ffff00; // 设置背景颜色
+            background-image: url("img/img1.jpg"); // 只能以左上角为基准显示部分图片，太宽太长了又会重复填充图片
+            background-repeat: repeat/repeat-x/repeat-y/no-repeat; // 默认平铺repeat/水平方向平铺/...
+            background-size: 1200px (1000px)/cover/contain; // 设置背景图片的宽度、高度（也可用百分比表示）
+            // （最常用）多用cover在保持图片比例的情况充满整个区域（图片可能有裁剪），contain是不裁剪图片尽量充满整个区域
+            background-position: left/right/center top/center/bottom / x% y% / xpos ypos(px);
+            // 默认left top(0% 0%)，center center最常用
+        }
+
+7. 文本属性：
+
+        h1{
+            text-align: left/right/center; // 调整对齐方式，默认left居左
+            text-decoration: underline/overline/line-through; // 下划线，上划线，删除线
+            text-transform: capitalize/uppercase/lowercase; //  每个单词开头大写/所有单词大写/所有单词小写
+            text-indent: 50px; // 首行文本缩进（可以为负值，就是向前多占几格），两个字是30px
+        }
+
+8. 表格属性：
+
+        table,td{
+            border: 1px solid red; // 边框粗细 实心/空心 颜色
+        } // 这样是双线框
+
+        table{
+            border-collapse: collapse; // 添加折叠边框，边框就是单线的了
+            width: 500px;
+            height: 300px; // 默认表格大小是根据内容字体大小决定的
+        }
+
+        td{
+            text-align: left/center/right;
+            vertical-align: top/center/bottom; // 垂直对齐方式
+            padding: 20px (10px);
+            // 内容填充与表格边框的距离，自动把表格撑开，第一个值代表上下边距，第二个代表左右，第二个不写就是默认和第一个一样
+            background-color: #555555; // 单元格填充底色
+            color: #ffffff; // 单元格内容文字颜色
+        }
+
+9. 关系选择器：
+    - 后代选择器：`E F{}`表示E下的所有F元素（儿子孙子都算）
+
+            ul li{
+               color:green;
+            } // ul内嵌套的ul或者ol的li标签也会生效
+   
+    - 子代选择器：`E>F {}`只对E下直接一层的F元素生效
+    - 相邻兄弟选择器：`E+F {}`选择紧跟在E元素后面的第一个F元素
+    - 通用兄弟选择器：`E~F {}`选择在E元素后面的所有F元素
+
+10. CSS盒子模型（Box Model）：margin外边距（浏览器默认有8px），border边框，padding内边距（会把原来定好大小的——如div元素——给撑大，可以通过`padding-left/right/top/bottom`单独设置不同的值，margin亦可），content实际内容。
+语法和table中的一样。
+
+    ![](../img/盒子模型.png)
+
+11. CSS3弹性盒子模型（flex box）
+
+        <head>
+            <style>
+                .container{
+                    width: 500px;
+                    height: 500px;
+                    background-color: #555;
+                    display: flex; // 在父元素上设置弹性盒子，默认内容横向摆放（没设置弹性盒子默认纵向，按照块级元素规则）
+                    flex-direction: row/row-reverse/column/column-reverse;
+                    // 左对齐（默认）/右对齐，从后往前排，最后一项排在最前面/纵向排列/纵向反转，最后一项排在最上面
+                    justify-content: flex-start/flex-end/center; // 居上（默认）/居下/居中摆放
+                    align-items: flex-start/flex-end/center; // 居左/居右/居中摆放
+                }
+                .box1{
+                    width: 100px;
+                    height: 100px;
+                    background-color: red;
+                    flex:2; // 可以理解为占比，就不用根据父元素再设置宽度了（宽度失效）
+                }
+                .box2{
+                    width: 100px;
+                    height: 100px;
+                    background-color: green;
+                    flex: 2;
+                }
+                .box3{
+                    width: 100px;
+                    height: 100px;
+                    background-color: blue;
+                    flex: 1;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="containter">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+            </div>
+
+12. 文档流：（标准流：块元素自上而下摆放，内联元素从左到右 **问题**：高度不同时默认底部对齐；空格折叠；元素无间隙，除非换行写）
+
+    脱离文档流！
+
+    - 浮动
+    
+            <head>
+                <style>
+                    .box{
+                        width: 200px;
+                        height: 200px;
+                        background-color: blue;
+                        float: left/right; // 向左浮动就会覆盖在container的左上角（两层），向右就是浮动到整个页面的右上角
+                    }
+                    .container{
+                        width: 400px;
+                        height: 400px;
+                        // 标准流下：宽度不设置就默认为页面宽度，如果不设置height就默认设置为内部box撑开的高度
+                        // 脱离标准流后，（默认）父元素就没了，塌陷
+                        background-color: yellow;
+                    }
+                    text{
+                        width: 100px;
+                        height: 100px;
+                        background-color: violet;
+                    } // 如果后续元素不设置float那么就会在底层被覆盖
+                    img{
+                        width: 300px;
+                        float: left;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="box"></div>
+                <div class="container"></div>
+                <img>
+                <img> // 此时两张图片之间没有空隙
+            </body>
+    
+        浮动还可以改变不同的容器div排列的方式（如给`ul li{float:left;}`就可以把无序列表变成水平布局，达成水平导航的效果）
+
+        如果外部宽度不够，就会被强制挤到下一行里
+
+        **浮动的副作用**：浮动元素会造成父元素塌陷；影响后续元素
+
+        如何清除浮动？
+    
+        ①直接给父元素设置高度（**但**如果父元素内塞了一个不浮动的元素还是会受到影响）
+    
+        ②给受影响元素添加`clear: left/right/both;`属性清除左/右浮动
+    
+        ③（使用广泛）如果父元素塌陷且影响到了同级元素，不能设置父元素高度时，可以在父元素添加`overflow: hidden;(clear: both;)`属性
+    
+        ④上述情况还可以用伪对象方式处理。
+                
+                <style>
+                    .container{
+                        width: 500px;
+                        background-color: #666;
+                    }
+                    .container::after{
+                        content:"";
+                        display: block; // display设置为none就是不显示
+                        clear: both;
+                    } // 伪对象
+                </style>
+
+    - 定位`position: relative/absolute/fixed`，其中绝对定位和固定定位可以脱离文档流
+
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                position: relative;
+                left: 200px; // 相对定位
+                right/top/bottom: 200px; // 控制距离上下左右
+            }
+    
+            .box1{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                position: absolute; // 绝对定位
+                left: 200px; // 同样同上下左右来标定位置
+            }
+            .box2{
+                width: 200px;
+                height: 200px;
+                background-color: green;
+            }
+            .box3{
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+                position: absolute;
+                left: 200px;
+            } // 每设置一个绝对定位就增加一个图层，会互相压盖，而浮动只有两层
+    
+            .box1{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                position: fixed; // 固定定位
+                left: 200px; // 同样同上下左右来标定位置
+            } // 一般一个页面也就用一处，作用是不管页面如何滚动始终固定在哪个位置
+
+    设置定位后，相对定位和绝对定位都是相对于具有定位的父级元素进行调整，如果父级元素不存在定位，就逐级向上寻找直到顶层文档。
+
+13. `z-index`属性的数值可以调整谁覆盖谁，值大的盖住小的。
+14. `border-radius`属性（单位px）可以设置圆角效果，要变成圆形就写成100%。
+
+    一个值：四个角
+    
+    两个值：第一个值表示左上&右下，第二个值左下&右上；
+    
+    三个值：左上 左下&右上 右下
+    
+    四个值：左上 右上 右下 左下
+
+15. `box-shadow:h-shadow v-shadow blur color;`添加阴影：水平、垂直阴影的位置（必选）px，负数表示向左上投影，模糊距离px，阴影颜色
+16. 在`<style>`中用`@keyframes`创建动画
+
+            @keyframes name{ // 给动画命名name
+                from/0%{
+                    css样式
+                }
+                percent{
+                    css样式
+                } // 可以添加多个percent
+                to/100%{
+                    css样式
+                }
+            }
+
+    用`animation`执行动画：
+
+            div{
+                animation:name duration timing-function delay iteration-count direction animation-play-state;
+            }
+            div:hover{
+                background-color: coral; // 鼠标悬停在上面会显示成橘色
+                animation-play-state: paused;
+            }
+
+    |属性| 值                                                                     |
+    |-----------------------------------------------------------------------|----|
+    |name动画名称| /                                                                     |
+    |duration| 3s                                                                    |
+    |执行动画的时间| ease（逐渐变慢，默认）/linear（匀速）/ease-in（加速）/ease-out（减速）/ease-in-out（先加速后减速） |
+    |delay延迟| 5s(ms)                                                                |
+    |iteration| 数字（不写就是默认一次）                                                          |
+    |direction| normal（默认向前播放）/alternate（偶数次向前播放，奇数次反方向播放）                            |
+    |动画的播放状态| running（播放）/paused                                                    |
+
+17. `opacity`透明度属性0~1
+18. 媒体查询：能在不同的终端设备下展示不同的效果
+
+    `<meta name="viewport" content="width=device-width,initial-scale=1.0">`标签使用设备的宽度作为视图宽度并**禁止初始的缩放**
+
+            @media screen and (max-width: 768px) {
+                .box{
+                    background-color:blue;
+                }
+            } // 手机
+            @media screen and (min-width: 768px) and (max-width: 996px) {
+                .box{
+                    background-color: green;
+                }
+            } // 平板
+            @media screen and (min-width:996px) {
+                .box{
+                    background-color: red;
+                }
+            } // 电脑
+
+19. CSS-Sprite雪碧图，精灵图：零星图片->包含到大图中，用位置提取；减少了图片的字节，减少了网页的http请求，提高了网页性能。
+    
+            <span class="icon1"></span>
+            <span class="icon2"></span>
+            .icon1{
+                display: block; // block让一个行内元素变成块级元素，inline就是行内元素
+                width: 45px;
+                height: 70px;
+                background-image: url(1.png)
+                background-position: -10px 0; 
+            }
+
+20. 字体图标：加载速度快，减少http请求，兼容性高。在[阿里字体图标库](https://iconfont.cn/)下载代码，下载的文件中demo.html里推荐用font-class方式
+
+## JavaScript部分
+1. 

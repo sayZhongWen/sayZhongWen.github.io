@@ -4,9 +4,11 @@ nav:
   - 电子玫瑰:
     - 笔墨传情: writing.md
     - 灰色的树: scarf.md
-    - 夜雨声停: music.md
+    - 夜雨声停:
+      - 布鲁斯: music/blues.md
   - 难得学习:
-      - web前端学习: notes/web_notes.md
+      - web前端: notes/web_notes.md
+      - 计算机网络: notes/computer_web_notes.md
 theme:
   name: material
   language: en

@@ -41,7 +41,7 @@
    - `<span></span>`无特定含义
    - 有序列表（会自动出现1.2.3.的编号）
    
-        <ol type="1|a|A|i|I"> //type可以选择不同的编号类型：数字/大小写字母/大小写罗马字符
+        <ol type="1/a/A/i/I"> //type可以选择不同的编号类型：数字/大小写字母/大小写罗马字符
             <li>一个东西</li>
             <li>
                 <ol>
@@ -72,7 +72,7 @@
 
    - 表单，action后加服务器网址，method表示数据提交方式：get把提交的数据使url可以看到，post看不到；get提交少量数据，post提交大量数据（默认提交方式为get），name表单名称，Enter键也可以提交表单
 
-        <form action="url" method="get|post" name="myform">
+        <form action="url" method="get/post" name="my_form">
             <input> //添加输入框
             First name:<input type="text" name="firstname">
             <br>
@@ -98,8 +98,8 @@
 
 行内块级元素：`button,img,input...`
    - `<div></div>`容器标签，给网页分块，使布局更清晰
-    ![](../img/h5旧标签.png)
-    ![](../img/h5新标签.png)
+    ![](../img/web_notes_img/h5旧标签.png)
+    ![](../img/web_notes_img/h5新标签.png)
     上图中`<header></header>`表示头部，`<nav></nav>`导航，`<section></section>`章节、页眉、页脚等，`<aside></aside>`侧边栏，`<footer></footer>`脚部，`<article></article>`独立完整的内容块
 
 ## css部分
@@ -135,8 +135,8 @@
                 <link rel="stylesheet" type="text/css" href="./xxx.css"> //xxx.css是外部的css文件
     
     </li>
-</ul>
-   
+    </ul>
+
 3. 选择器类型
     <ul>
         <li>全局选择器（一般做样式初始化）
@@ -192,7 +192,7 @@
     如果有两个相同优先级的选择器，那么就按顺序生效，后面的会把前面的覆盖
     </li>
     </ul>
-      
+
 4. color的设置方式：
     <ul>
     <li>英文描述red,blue</li>
@@ -267,7 +267,7 @@
 10. CSS盒子模型（Box Model）：margin外边距（浏览器默认有8px），border边框，padding内边距（会把原来定好大小的——如div元素——给撑大，可以通过`padding-left/right/top/bottom`单独设置不同的值，margin亦可），content实际内容。
 语法和table中的一样。
 
-    ![](../img/盒子模型.png)
+    ![](../img/web_notes_img/盒子模型.png)
 
 11. CSS3弹性盒子模型（flex box）
 
@@ -500,4 +500,142 @@
 20. 字体图标：加载速度快，减少http请求，兼容性高。在[阿里字体图标库](https://iconfont.cn/)下载代码，下载的文件中demo.html里推荐用font-class方式
 
 ## JavaScript部分
-1. 
+1. 标识符是识别各种变量名的名称（如变量名），可用字母$_和数字（不能开头）组成（中文是合法的标识符，但不建议使用），不能是一些保留关键字。
+2. js引擎的运行方式：先解析代码，获得所有被声明的变量，然后再一行行运行。所以所有变量的声明语句（只创建了一个名字）都会被提到最前面，也就是“变量提升”。
+3. 引入js的方式：（都是在`<body>`中加入）
+    - 嵌入html文件：`<script></script>`标签写js
+    - 引入本地独立js文件：`<script (type="text/javascript") src="./myjs.js"></script>`
+    - 引入网页来源js文件：最常见的是[jquery的库](http://code.jquery.com)`<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>`检查时在network处刷新，选择All查看是否有js资源
+4. 单行注释：`//` 多行注释：`/* */`（`Alt+Shift+A`多行注释快捷键） 嵌入html文件的注释：`<!-- xxxxx -->`
+5. 输出方式：
+
+            alert("内容"); // 会弹出对话框
+            document.write("内容"); // 输出到页面（换行用document.write("<br>");
+            console.log("内容"); // 打印到控制室（使用最频繁），可在网页的“检查”时打印出
+
+6. 六种数据类型，ES6新增了第七种Symbol类型和第八种BigInt类型。
+
+    原始类型（基础类型）：数值（数字）、字符串、布尔值；
+
+    合成类型（复合类型）：对象；
+
+            var user={
+                age:19,
+                name:"me",
+                marriage:false,
+            }
+
+    undefined和null是特殊类型，null一般代表对象为空，undefined一般代表数值为“没有”。
+
+7. `typeof varient`运算符判断数据类型（返回“对象”的话不太准确，因为null/{}/数组等也可以返回object）
+8. `===`表示严格比较（数值和类型）如`10=="10"->true,10==="10"->false`，`!=,!==`同理；非布尔值也可以取反成为布尔值（NaN约等于0）。
+9. 字符串和数字相加会得到一个字符串（数字作为字符串添加到原字符串末尾），字符串单双引号可以相互交替嵌套，转义规则相同；字符串默认写在一行内，换行要加转义符\；`str.length`
+10. 字符串方法
+    - `str.charAt(n)`可以返回字符串第n个位置的字符（从0开始），如果n越界就返回空字符串
+    - `s1.concat(s2,s3)`返回s1和s2，s3（参数数量不限）合并的字符串，原字符串不变；会将数据型变量转换为字符串型，但原变量类型不变；直接用`s3=s1+s2`也可以实现。但`concat`不会做运算，`+`会从左到右先做运算再变成字符串
+    - `s1.substring(n1,n2)`表示截取下标n1~n2（不包含第n2个位置）的部分，若省略参数n2就是从第n1个位置到结尾，若参数为负数就自动转换成0，若n2<n1那就自动转换顺序；
+    - `substr`括号内的第一个参数是起始位置，第二个参数是提取的字符串长度，若省略第二个参数就默认到结尾，若只有一个参数且为负数，那么就从原字符串末尾开始数（如`var s1="helloworld";s1.substr(-5)就是"world"`），若第二个参数为负数，那就自动转换成0，返回空字符串；
+    - `s1.indexOf(s2,n)`返回s1中（从第n个位置开始，可省略）第一次出现完整s2（不能断断续续）的位置，未匹配成功则返回-1，一般用这个方法来判断是否存在某字符串
+    - `s1.trim()`用于去掉字符串两端的空格、换行符、回车符、制表符等，返回新字符串，不改变原字符串；ES6的新方法`trimEnd()/trimStart()`可以单独去掉字符串尾部、头部空格
+11. 数组方法
+    - `"a|b|c".split("|",n)`返回`['a','b','c']`，若括号中为空字符串，则返回每个单个字符的数组，若没有参数则返回原字符串；n为限定返回的成员数（默认取前几个）
+    - 数组外加中括号，可以放任意类型混合，先定义再赋值或先赋值都可以，数组嵌套数组也可以（多维数组），`length`属性可以返回数组长度，数组越界返回`undefined`，数组的遍历可以用for/while/for(var i in a)
+    - `typeof`碰到数组返回object，`Array.isArray(arr)`可以判定是否是数组，返回布尔值
+    - `arr.push(obj1,obj2)`可以向原数组添加多个元素，并返回现在数组的长度；`pop()`删除数组最后的一个元素并返回该元素；`shift()`删除数组第一个元素并返回该元素，空数组则返回`undefined`，可以用来遍历并清空整个数组；`unshift()`在头部添加元素并返回数组长度
+    - `['a','b','c'].join("|")`返回a|b|c，碰到undefined或者null则转换成空字符串
+    - `s1.concat(s2)`可以合并数组s2到s1，返回新数组，原数组不变，也有和`push`一样的用法和作用，主要应用于：上拉加载，合并数据
+    - `reverse()`方法可以颠倒数组的排序，返回改变后的数组**（会改变原数组）**，可用于翻转字符串（先把字符串split成数组再reverse再join）
+    - `indexOf`用法同字符串
+12. 函数的声明
+
+            function add(x,y){
+                console.log(x+y);
+                return x+y;
+            }
+
+    函数名和变量名一样，也有提升——可以先调用再创建
+13. 对象里的数据成员如果是函数，那就称它为“方法”，属性的值也可以是其他对象，可以链式调用
+
+            var user={
+                name:"Josephine",
+                friends:["Oliva","Sarah"],
+                getName:function(){
+                    return name;
+                },
+                jobs:{
+                    type:"scientist",
+                    salary:100,
+                },
+            };
+
+14. Math对象
+    - `Math.abs(n)`
+    - `/Math.min(n1,n2)/Math.max(n1,n2,n3)`min()max()括号中没有参数则为-Infinity和Infinity
+    - `Math.floor(n)/Math.ceil(n)`向上下取整`random()`返回0到1之间的一个随机数
+    - 生成任意范围内的随机数
+
+            function getRandomArbitrary(min,max){
+                return Math.random()*(max-min)+min;
+            }
+
+15. Date对象：以1970年1月1日零点作为时间的零点，可以表示前后各一亿天，时间单位为毫秒(Unix是20世纪70年代出现的一个操作系统，它认为这是时间纪元，js遵循此约束)
+    - `Date.now()`
+    - `new Date(年，月，日，时，分，秒，毫秒)`可以创建一个Date对象，括号里只写数字n就是写n对应的时间，括号里没有参数就是获取当前时间
+    - | 方法        | 作用             |
+      |----------------|---|
+      | getTime() | 返回距零点的毫秒数      |
+      | getDate() | 返回每个月的几号（从1开始） |
+      | getDay()  | 返回星期几（0表示星期日）  |
+      | getYear()  | 返回距离1900年的年数   |
+      |getFullYear()| 返回具体四位数的年份     |
+      |getMonth()| 返回月份（0~11）     |
+      |getHours()| 返回小时（0~23）     |
+      |getMilliseconds()| 返回毫秒（0~999）    |
+      |getMinutes()| 返回分钟（0~59）     |
+      |getSeconds()| 返回秒（0~5）       |
+16. DOM(Document Object Model)是js操作网页的接口（只是一种接口规范，可以用任何语言实现），DOM的最小组成单位是节点，节点通过树形结构构成DOM树。
+    - 七种节点类型：
+
+        >Document：整个文档树的顶层节点
+    
+        >DocumentType：doctype标签
+
+        >Element：网页的各种HTML标签
+
+        >Attribute：网页元素的属性（如class="right")
+
+        >Text：标签之间或标签所含的文本
+
+        >Comment：注释
+
+        >DocumentFragment：文档的片段
+
+    - 浏览器原生提供document节点，可在`<script></script>`中打印`console.log(document)`
+    - 有上级下级同级关系
+    - `Node.nodeType`属性对应表
+
+        | 节点类型           | 对应值                                |对应常量|
+        |------------------------------------|----|-----|
+        | 文档节点(document) | 9           |Node.DOCUMENT_NODE|
+        | 元素节点(element)| 1           |Node.ELEMENT_NODE|
+        |属性节点(attr)| 2         |Node.ATTRIBUTE_NODE|
+        |文本节点(text)| 3               |Node.TEXT_NODE|
+        |文档片段节点(DocumentFragment)| 11 |Node.DOCUMENT_FRAGMENT_NODE|
+
+17. document对象：
+    - `var divs = document.getElementsByTagName('div');`以数组形式返回在document中找到的所有div标签
+    - `document.getElementsByClassName('container')`
+    - `document.getElementsByName('myname')`选择具有特定`name`属性的（如表单），返回一个NodeList，但使用率很低
+    - `document.getElementById('myID')`只返回一个元素（因为id不能重复）
+    - `document.querySelector('.class')`筛选出特定的css选择器，返回找到的第一个
+    - `document.querySelectorAll('.class')筛选多个特定的css选择器
+    - `var text = document.createElement("p")`可以创建p标签等
+    - `var content = document.createTextNode("内容“)`创建文本内容
+    - `text.appendChild(content)`可以将内容塞到标签里
+    - `var id = document.createAttribute("id")`创建属性
+    - `id.value = "root";`给属性赋值
+    - `text.setAttributeNode(id)`把属性赋给标签
+    - 先获取标签，然后用`appendChild`把新建的标签塞进去
+18. Element对象、属性：
+    - 
+19. 

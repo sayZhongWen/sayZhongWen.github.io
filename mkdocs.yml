@@ -5,6 +5,7 @@ nav:
     - 笔墨传情: writing.md
     - 灰色的树: scarf.md
     - 夜雨声停:
+      - Welcome!: music.md
       - 布鲁斯: music/blues.md
   - 难得学习:
       - web前端: notes/web_notes.md

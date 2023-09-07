@@ -554,6 +554,7 @@
             }
 
     函数名和变量名一样，也有提升——可以先调用再创建
+
 13. 对象里的数据成员如果是函数，那就称它为“方法”，属性的值也可以是其他对象，可以链式调用
 
             var user={
@@ -637,5 +638,83 @@
     - `text.setAttributeNode(id)`把属性赋给标签
     - 先获取标签，然后用`appendChild`把新建的标签塞进去
 18. Element对象、属性：
-    - 
-19. 
+    - `Element.id`可以修改id属性
+    - `className`属性读写class，多个class用空格隔开
+    - `classList`有`add()/remove()/contains("class_name")/toggle()`方法：增加/移除/是否包含/如果存在则删除，如果不存在则添加
+    - `xxx.innerHTML/innerText`是读取，也可以用来赋值，前者可以识别标签，后者会把标签识别成一个字符串
+19. Element获取元素位置：
+
+    |属性| 描述                                                                         |
+    |----------------------------------------------------------------------------|---|
+    |clientHeight| 获取元素高度加上了`padding`部分，不包括`border`、`margin`                                  |
+    |clientWidth| 获取元素宽度同上，这两个一般用来获取页面高度`document.documentElement视口屏幕/body页面内容.clientHeight` |
+    |scrollHeight| 元素总高度，包括`padding`和溢出的不可见内容，不包括`border`、`margin`                            |
+    |scrollWidth| 同上                                                                         |
+    |scrollLeft| 元素水平滚动条向右滚动的的像素数量                                                          |
+    |scrollTop| 向下                                                                         |
+    |offsetHeight| 元素的css垂直高度，包括元素本身的高度、`padding`和`border`                                    |
+    |offsetWidth| 同上                                                                         |
+    |offsetLeft| 到**定位**父级左边界的距离（若父级没有定位，则一直往上找直到顶层文档）                                      |
+    |offsetTop| 上边界                                                                        |
+
+20. 取消浏览器左右自带的8px可以设置通用选择器padding、margin=0
+21. css操作：
+    - `div.setAttribute('style',"backgroundColor:red;")`
+    - `var box_style = document.getElementById("box"); backgroundColor : "red";`
+    - `box_style.cssText = "backgroundColor:red;"`
+22. 事件处理：
+    - HTML事件：缺点：html和js没有分开，不好调试
+
+            <body>
+                <button onclick="demo()">按钮</button>
+                <script>
+                    function demo(){
+                        console.log("click");
+                    }
+                </script>
+            </body>
+
+    - DOM0级事件（事件基本上都有on，如onclick）：html和js分离，但无法同时添加多个事件，事件会被后面的函数给覆盖
+
+            <button id="btn">按钮</botton>
+            <script>
+                var btn=document.getElementById("btn");
+                btn.onclick=function(){} // 括号里默认有一个Event对象的参数
+            </script>
+
+    - DOM2级事件（基本没有on）：事件可以重复添加，不会被覆盖
+
+            btn.addEventListener("click",function(){});
+
+23. 鼠标事件：
+
+    |事件| 含义                     |
+    |------------------------|---|
+    |click| 按下鼠标                   |
+    |dblclick| 双击                     |
+    |mousedown| 按下鼠标                   |
+    |mouseup| 释放按下的鼠标                |
+    |mousemove| 当鼠标在节点内部移动时触发，持续移动则连触发 |
+    |mouseenter| 进入节点触发，进入子节点不触发        |
+    |mouseleave| 离开节点触发，离开父节点不触发        |
+    |mouseover| 进入节点触发，进入子节点再次触发       |
+    |mouseout| 离开节点触发，离开父节点也触发        |
+    |wheel| 滚动滚轮                   |
+
+24. 事件发生后会产生一个事件对象，作为参数传给监听函数
+    - Event对象的target属性返回当前节点，type返回当前事件的类型
+
+            btn.onclick=function(e){
+                console.log(e.target);
+            }
+
+    - Event对象的preventDefault()方法取消浏览器对当前事件的默认行为（比如说原本点击链接、表单是默认跳转的），stopPropagation()阻止事件冒泡（只关注子级节点，忽略父级节点的触发）
+25. 键盘事件：
+
+    |事件| 含义                                     |
+    |----------------------------------------|---|
+    |keydown| 按下键盘（按下有值的键就先触发keydown再触发keypress）     |
+    |keypress| 除了Ctrl、Alt、Shift、Meta等无值的键，按下其他有值的键都触发 |
+    |keyup| 松开键盘                                   |
+
+26. 

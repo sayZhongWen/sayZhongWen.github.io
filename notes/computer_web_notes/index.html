@@ -1,0 +1,869 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../web_notes/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>计算机网络 - Dizzy_D</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Dizzy_D" class="md-header__button md-logo" aria-label="Dizzy_D" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dizzy_D
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算机网络
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dizzy_D" class="md-nav__button md-logo" aria-label="Dizzy_D" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Dizzy_D
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    废话主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    电子玫瑰
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            电子玫瑰
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../writing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    笔墨传情
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scarf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    灰色的树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    夜雨声停
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            夜雨声停
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../music/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../music/blues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    布鲁斯
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    难得学习
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            难得学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    web前端
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    计算机网络概述
+  </a>
+  
+    <nav class="md-nav" aria-label="计算机网络概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 计算机网络基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 计算机网络结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 数据交换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4 计算机网络性能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-network-architecture" class="md-nav__link">
+    1.5 计算机网络体系结构network architecture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    计算机网络概述
+  </a>
+  
+    <nav class="md-nav" aria-label="计算机网络概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 计算机网络基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 计算机网络结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 数据交换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4 计算机网络性能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-network-architecture" class="md-nav__link">
+    1.5 计算机网络体系结构network architecture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">计算机网络</h1>
+<h2 id="_2">计算机网络概述</h2>
+<h3 id="11">1.1 计算机网络基本概念</h3>
+<ol>
+<li>计算机网络=通信技术+计算机技术</li>
+<li>通信系统模型：
+    <img alt="" src="../../img/computer_web_notes_img/%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B.png" />
+    所以计算机网络就是一种通信网络，信源和信宿都是计算机</li>
+<li>定义：计算机网络就是互连（互联互通，通过通信链路）的、自治（计算机无主从关系）的计算机结合。</li>
+<li>如果距离远、数量大，就通过<strong>交换网络</strong>互连主机
+    <img alt="" src="../../img/computer_web_notes_img/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%A8%A1%E5%9E%8B.png" /></li>
+<li>Internet是全球最大的互联网络：ISP（Internet Service Provider）网络互连的“网络之网络”，将全球ISP与移动网络和区域ISP互连，区域ISP又与家庭网络、机构网络（如校园网等）互连。<ul>
+<li>利用对等链路peering link将大的区域ISP互连/引入第三方IXP（Internet exchange point）互连</li>
+<li>可能出现区域网络regional networks连接接入ISP和运营商ISP</li>
+<li>内容提供商网络content provider networks（如Google，Microsoft）可能运行自己的网络，并就近为端用户提供服务、内容</li>
+<li>Internet是动态性的（随时都有主机接入、断开），但我们可以刻画它的大致结构：
+    <img alt="" src="../../img/computer_web_notes_img/Internet%E7%BB%93%E6%9E%84.jpg" /></li>
+<li>数以百万计的互连的计算设备集合：主机（hosts）=端系统（end systems），都会运行网络应用</li>
+<li>通信链路：光纤、铜缆、无线电、卫星……</li>
+<li>分组交换：转发分组（数据包）有路由器（routers）和交换机（switches）</li>
+<li>Internet是网络应用提供通信服务的通信基础设施，实际上是为网络应用提供应用编程接口（API）：支持应用程序“连接”Internet，发送、接受数据（数据传输）</li>
+</ul>
+</li>
+<li>硬件（主机、路由器、通信链路等）是计算机网络的基础，计算机网络中的数据交换必须遵守事先约定好的规则：网络协议。</li>
+<li>网络协议（network protocol）是为进行网络中的数据交换而建立的规则、标准或约定，规定了通信实体之间所交换的信息的格式、意义、顺序以及针对收到信息或发生的事件所采取的“动作”（actions）。</li>
+<li>协议三要素：<ul>
+<li>语法Syntax：数据与控制信息的结构或格式（如果是底层信息，那就是信号电平）</li>
+<li>语义Semantics：需要发出何种控制信息、完成何种动作以及作出何种响应、差错控制</li>
+<li>时序Timing：事件顺序、（交换信息的）速度匹配</li>
+</ul>
+</li>
+<li>协议是网络创新的表现之一（？）</li>
+<li>Internet协议标准：RFC（Request for Comments），由IETF互联网工程任务组（Internet Engineering Task Force）进行管理。若要了解某些协议最权威的内容，看RFC文档。</li>
+</ol>
+<h3 id="12">1.2 计算机网络结构</h3>
+<ol>
+<li>组成部分：<ul>
+<li>网络边缘：主机（运行网络应用）</li>
+<li>接入网络，物理介质：有线/无线通信链路（住宅、家庭接入网络、机构接入网络、移动接入网络）</li>
+<li>网络核心（核心网络）：互联的路由器（或分组转发设备）、网络的网络</li>
+</ul>
+</li>
+<li>客户/服务器（client/server）应用模型：客户发送请求，接受服务器响应</li>
+<li>对等（peer—peer,P2P）应用模型：无（或不仅依赖）专用服务器（通信过程/通信交换过程），通信在对等的实体之间直接进行通信</li>
+<li>用户关心的是贷款bandwidth(bps)每秒传输数据的速率、接入方式共享/独占？</li>
+<li>数字用户线路（DSL，非对称数字用户线路ADSL）：多路信号共同使用一个物理介质来传输信号（电话线）
+    <img alt="" src="../../img/computer_web_notes_img/DSL.jpg" /></li>
+<li>电缆网络：
+    <img alt="" src="../../img/computer_web_notes_img/%E7%94%B5%E7%BC%86%E7%BD%91%E7%BB%9C1.jpg" />
+    <img alt="" src="../../img/computer_web_notes_img/%E7%94%B5%E7%BC%86%E7%BD%91%E7%BB%9C2.jpg" /></li>
+<li>无线接入网络：通过共享的无线接入网络连接端系统和路由器，通过“基站/接入点”。<ul>
+<li>无线局域网（LANs）同一建筑物内（30m），WiFi：11Mbps，54Mbps传输速率</li>
+<li>广域无线接入：通过电信运营商（蜂窝网），接入范围在几十公里。带宽：1Mbps，10Mbps，100Mbps</li>
+</ul>
+</li>
+<li>网络核心的关键功能：路由+转发。每一个路由器都会遵循某种路由协议，再通过某种路由算法计算获得一个<strong>本地转发表</strong>（包含目的地址和对应的输出链路）来查表解析到达分组的目的地址，最后转发到正确的端口。</li>
+<li>网络拓扑结构就是网络中各个节点之间的连接方式。在设计网络时要考虑拓扑结构，以达到最优的性能和可靠性；在发生故障时，也可以通过拓扑结构快速定位问题所在，采取修复措施。</li>
+</ol>
+<h3 id="13">1.3 数据交换</h3>
+<ol>
+<li>O(N^2)链路/交换设备网络</li>
+<li>交换：<ul>
+<li>动态转接，可以并行进行从一个设备到另一个设备的数据交流</li>
+<li><strong>动态分配传输资源</strong>，从原主机穿越交换机到另一个主机</li>
+</ul>
+</li>
+<li>
+<p>数据交换的类型：</p>
+<ul>
+<li>
+<p>电路交换：电话网络</p>
+<p>建立连接（呼叫/电路建立）、通信、释放连接（拆除电路）</p>
+<p>特点：<strong>独占资源</strong>（要等挂机后才能再建立）</p>
+<p>如何共享中继线？多路复用（见下）
+    - 报文交换（message switching）：源（应用）发送信息整体，报文整体到达下一个路由器节点后再决定往哪个端口发送，早期电报使用这种方式。
+    - 分组交换（package switching）：报文<strong>拆分</strong>出来的一系列相对较小的数据包，并加上头部信息，最后再进行<strong>重组</strong>，那么就会产生额外开销。当前一个片段在通过路由器发向目的主机的时候，后一个片段可以同时从主机向路由器发送。</p>
+<p>统计多路复用（statistical multiplexing），如果A和B同时发送数据，那么共享链路就都用1.5Mb/s全部发送，并不是事先分配好的，具有随机性，按需共享链路。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>多路复用Multiplexing：链路/网络资源（如带宽）划分为“资源片”，将资源片分配给各路“呼叫”，每路呼叫独占分配到的资源片进行通信，资源片可能“闲置idle”（无共享）。</p>
+<ul>
+<li>频分多路复用（FDM，frequency division multiplexing）：各用户占用不同的带宽资源（频率带宽Hz），用户在分配到一定的频带后，在通信过程中自始至终都占用这个频带（电视）</li>
+<li>时分多路复用（TDM，time division multiplexing）：将时间划分为一段段等长的时分复用帧（TDM帧），每个用户在每个TDM帧中占用固定序号的时隙，每个用户占用的时隙是周期性出现（其周期就是TDM帧的长度）</li>
+<li>波分多路复用（WDM，wavelength division multiplexing）：光的频分复用（只是因为在光中多用波长描述）</li>
+<li>
+<p>码分多路复用（CDM，code division multiplexing）：每个用户分配一个唯一的m bit码片序列（chipping sequence），其中0用-1表示，1用-1表示。各用户使用相同频率载波，利用各自码片序列编码数据（广泛应用于无线链路共享，如蜂窝网，卫星通信等）</p>
+<p>编码信号=原始数据×码片序列（如发送比特1，即+1，则发送自己的m bit码片序列；发送0，即-1，则发送该码片序列的m bit码片序列的反码）</p>
+<p>这就要求：各用户码片序列相互正交 <img alt="" src="../../img/computer_web_notes_img/%E7%A0%81%E7%89%87%E5%BA%8F%E5%88%97%E6%AD%A3%E4%BA%A4.jpg" />
+<img alt="" src="../../img/computer_web_notes_img/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81.jpg" />
+<img alt="" src="../../img/computer_web_notes_img/%E8%A7%A3%E7%A0%81%E4%B8%BE%E4%BE%8B.jpg" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>报文交换和分组交换均采用“存储-转发”（store and forward）交换方式：先将数据分组暂存，确定要发到那个链路且确认链路可用就转发。</p>
+</li>
+<li>孰优孰劣？讨论传输延迟（发送时延）：，比起报文交换分组交换速度快，路由器要求的缓存小。</li>
+<li>两个节点的直接链路称之为“跳步”，一般是跳步数=路由器数+1</li>
+<li>设报文为M bits，链路带宽R bps，分组长度：L bits，跳步数：h，路由器数：n，则报文交付时间T=M/R+(h-1)L/R=M/R+nL/R（把B，kB转换成bit要×8）</li>
+<li>每个用户“活动”时需100kb/s，平均活动时间10%（浏览网页不算“活动”），电路交换会把资源占为己有，利用率低，所以如今还是用分组交换可以支持更多用户同时使用。</li>
+<li>分组交换适用于<strong>突发</strong>数据传输网络（一会儿用很多，一会儿啥也不用，如发邮件，但看视频就不算），简单、无需呼叫建立，Internet。但可能产生拥塞（congestion），分组延迟和丢失，需要协议处理可靠数据传输和拥塞控制。用分组交换来提供电路级性能保障（实时语音服务）还是比较困难的。</li>
+</ol>
+<h3 id="14">1.4 计算机网络性能</h3>
+<ol>
+<li>速率（数据传输速率、比特率）是计算机网络中一个重要的性能指标，实际往往是指额定速率或标称速率</li>
+<li>带宽bandwidth本指信号具有的频带宽度，即最高频率与最低频率之差，单位Hz；网络的“带宽”通常指数字信道所能传送的“最高数据率”，单位b/s(bps)</li>
+<li>分组交换为什么会产生延迟/时延（delay/latency）甚至丢包？排队等待、传输都需要时间。如果缓存满了，到达分组被丢弃，出现丢包（分组到达速率超出输出链路容量）。</li>
+<li>
+<p>分组延迟：</p>
+<ul>
+<li>结点处理延迟（nodal processing delay）：差错检测、确定输出链路，通常小于毫秒级别</li>
+<li>
+<p>排队延迟（queueing delay）：等待输出链路可用 &amp; 取决于路由器拥塞程度</p>
+<p>链路带宽R bps，分组长度L bits，平均到达分组速率a，定义流量强度（traffic intensity）=La/R</p>
+<p>~0：平均排队延迟很小</p>
+<p>~1：平均排队延迟很大</p>
+<p>&gt;1：超出服务能力，平均排队延迟无限大</p>
+</li>
+<li>
+<p>传输延迟（transmission delay）：与分组长度、链路带宽有关</p>
+</li>
+<li>传播延迟（propagation delay）：物理链路长度、信号传播速度（电信号、光信号、无线电波信号）~2×10^8</li>
+</ul>
+</li>
+<li>
+<p>时延带宽积/带宽时延积=传播时延×带宽，又被称为以比特为单位的链路长度</p>
+</li>
+<li>分组丢失（丢包）：队列缓存容量有限；分组到达已满队列将被丢弃（丢包）；丢弃分组可能由前序节点或源重发（也可能不重发）。丢包率=丢包数/已发分组总数</li>
+<li>吞吐量/率throughput：表示在发送端与接收端之间传送数据速率(b/s)；即使吞吐量：给定时刻的速率；平均吞吐量：……；取决于瓶颈链路bottleneck link：端到端路径上，限制端到端吞吐量的链路。</li>
+<li><img alt="" src="../../img/computer_web_notes_img/Internet%E5%90%9E%E5%90%90%E7%93%B6%E9%A2%88.jpg" /></li>
+</ol>
+<h3 id="15-network-architecture">1.5 计算机网络体系结构network architecture</h3>
+<ol>
+<li>从<strong>功能</strong>上用<strong>分层结构</strong>描述网络，每层遵循某些网络协议完成本层功能，计算机网络体系结构是计算机网络的各层及其协议的集合</li>
+<li>分层结构的优点：结构清晰，有利于识别复杂系统的部件及其关系；模块化的分层易于系统更新、维护（任何一层服务实现的改变对于系统其它层都是透明的）；有利于标准化。但是分太多层也会降低效率。</li>
+<li>
+<p><img alt="" src="../../img/computer_web_notes_img/%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84.jpg" /></p>
+<p>实体entity表示任何可发送或接受信息的硬件/软件进程；</p>
+<p>协议是两个对等实体进行通信规则的集合，是“水平的”“同级的”；</p>
+<p>任何一层需要使用下层服务，遵循本层协议，实现本层功能，向上层提供服务，服务是“垂直的”；</p>
+<p>下层协议的实现对上层的服务用户是透明的，不可见的，只知道能提供这种服务；</p>
+<p>相邻层的实体键通过接口进行交互，通过服务访问点SAP（service access point）交换原语（一些参数的交流），指定请求的特定服务。
+4. </p>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sayZhongWen" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>

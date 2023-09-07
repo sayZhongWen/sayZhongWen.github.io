@@ -1,0 +1,1708 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../music/blues/">
+      
+      
+        <link rel="next" href="../computer_web_notes/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>web前端 - Dizzy_D</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Dizzy_D" class="md-header__button md-logo" aria-label="Dizzy_D" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dizzy_D
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              web前端
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dizzy_D" class="md-nav__button md-logo" aria-label="Dizzy_D" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Dizzy_D
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    废话主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    电子玫瑰
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            电子玫瑰
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../writing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    笔墨传情
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scarf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    灰色的树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    夜雨声停
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            夜雨声停
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../music/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../music/blues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    布鲁斯
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    难得学习
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            难得学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    web前端
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    web前端
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#html5" class="md-nav__link">
+    html5部分
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    css部分
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    JavaScript部分
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../computer_web_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#html5" class="md-nav__link">
+    html5部分
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    css部分
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    JavaScript部分
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="web">web前端学习笔记</h1>
+<h2 id="html5">html5部分</h2>
+<ol>
+<li>
+<p>适用于vscode的部分快捷键</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">快捷键</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>!+Enter</code></td>
+<td style="text-align: center;">快速补全一个html文件</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Shift+Alt+F</code></td>
+<td style="text-align: center;">快速格式化</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Alt+Up/Down</code></td>
+<td style="text-align: center;">将代码向上或向下移动一行</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Shift+Alt+Up/Down</code></td>
+<td style="text-align: center;">将代码向上或向下复制一行</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Ctrl+F</code></td>
+<td style="text-align: center;">快速查找</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Ctrl+H</code></td>
+<td style="text-align: center;">快速替换</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>h$*6</code></td>
+<td style="text-align: center;">创建六级标题</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>Alt+B</code></td>
+<td style="text-align: center;">用默认浏览器打开网页</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ul&gt;li*数字n</code></td>
+<td style="text-align: center;">创建n项的无序列表</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>table&gt;tr*m&gt;td*n{内容}</code></td>
+<td style="text-align: center;">生成m行n列内容都为“内容”的表格</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>html5的基本骨架</p>
+<pre><code>&lt;!DOCTYPE html&gt; // h5必备的声明
+&lt;html&gt; // 可以添加lang="en"表示主要语言
+    &lt;head&gt;&lt;/head&gt; // 描述各种属性和信息，大部分不会展示给用户看
+    &lt;body&gt;&lt;/body&gt; // 页面主体，用户可以直观看到
+&lt;/html&gt;
+</code></pre>
+</li>
+<li>
+<p>SEO搜索引擎优化，有关网页在搜索引擎上的排名</p>
+</li>
+<li><code>&lt;title&gt;&lt;/title&gt;</code>定义网页标题（显示在浏览器标题栏/状态栏上的）</li>
+<li><code>&lt;meta&gt;</code>描述网页文档属性，如<code>&lt;meta charset="utf-8"&gt;</code></li>
+<li><code>&lt;h+数字1~6&gt;&lt;/h1~6&gt;</code>一~六级标题（<code>&lt;h1 aligh="left|center|right"&gt;一级标题&lt;/h1&gt;</code>可修改标题居左居中居右方式，但不建议）</li>
+<li><code>&lt;p&gt;&lt;/p&gt;</code>段落（不建议直接在<code>&lt;body&gt;&lt;/body&gt;</code>部分写正文）</li>
+<li><code>&lt;br&gt;</code>换行</li>
+<li><code>&lt;hr color="" width="" size="" align=""&gt;</code>水平线颜色，长度，粗细（单位都为像素px），对齐方式</li>
+<li><code>&lt;img src="" alt="" title="" width="" height=""</code>插入图片，src可以是相对路径/绝对路径/url，alt是如果图片无法正常显示的替换文本，title是鼠标悬停在图片上的提示，一般不设置height防止图片被拉伸
+（<code>../</code>表示上一级目录）</li>
+<li><code>&lt;a href="url"&gt;链接文本/图片&lt;/a&gt;</code>超链接，默认情况下未被点击的链接文本是蓝色，鼠标点击但不松开显示红色，点击后显示紫色</li>
+<li><code>&lt;em&gt;&lt;/em&gt;</code>着重</li>
+<li><code>&lt;b&gt;&lt;/b&gt;</code>粗体</li>
+<li><code>&lt;i&gt;&lt;/i&gt;</code>斜体 </li>
+<li><code>&lt;strong&gt;&lt;/strong&gt;</code>加重</li>
+<li><code>&lt;del&gt;&lt;/del&gt;</code>字体的删除效果</li>
+<li><code>&lt;span&gt;&lt;/span&gt;</code>无特定含义</li>
+<li>
+<p>有序列表（会自动出现1.2.3.的编号）</p>
+<pre><code>&lt;ol type="1/a/A/i/I"&gt; //type可以选择不同的编号类型：数字/大小写字母/大小写罗马字符
+    &lt;li&gt;一个东西&lt;/li&gt;
+    &lt;li&gt;
+        &lt;ol&gt;
+            &lt;li&gt;可以嵌套列表&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+</li>
+<li>
+<p>无序列表：将有序列表换成<code>&lt;ul&gt;&lt;/ul&gt;</code>默认用粗体原点标记，<code>type=""</code>也可以改变标记，<code>disc</code>默认实心圆，<code>circle</code>空心圆，<code>square</code>小方块，<code>none</code>不显示，无序列表也可以嵌套，常用作导航栏</p>
+</li>
+<li>
+<p>表格：<code>&lt;tr&gt;&lt;/tr&gt;</code>表示行，<code>&lt;td&gt;&lt;/td&gt;</code>表示列</p>
+<pre><code>&lt;table border="1"&gt; //属性可加border（表格边框的粗细px，但是双线，不推荐）/width/height
+    &lt;tr&gt;
+        &lt;td colspan="3"&gt;1、2、3&lt;/td&gt; //colspan水平合并，rowspan垂直合并
+        &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan="2" rowspan="2"&gt;5、6、9、10&lt;/td&gt; //可同时向左向上合并
+        &lt;td&gt;7&lt;/td&gt;
+        &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;11&lt;/td&gt;
+        &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+</li>
+<li>
+<p>表单，action后加服务器网址，method表示数据提交方式：get把提交的数据使url可以看到，post看不到；get提交少量数据，post提交大量数据（默认提交方式为get），name表单名称，Enter键也可以提交表单</p>
+<pre><code>&lt;form action="url" method="get/post" name="my_form"&gt;
+    &lt;input&gt; //添加输入框
+    First name:&lt;input type="text" name="firstname"&gt;
+    &lt;br&gt;
+    Last name:&lt;input type="text" name="lastname"&gt;
+    Password:&lt;input type="password" name="pwd"&gt; //输入密码字符为·或*
+    &lt;input type="submit" value="登录"&gt; // 提交按钮，可以修改按钮上的文字
+    &lt;input type="button" value="按钮"&gt; // button默认value为submit，但只是一个普通的按钮
+    &lt;button type=""&gt;按钮&lt;/button&gt; // type="submit"则该按钮为提交，"button"就是一个可点击的按钮，"reset"就是重置表单数据（清空），默认为"submit"
+
+&lt;/form&gt;
+</code></pre>
+</li>
+<li>
+<p>块元素与行内元素（内联元素）</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>块级元素</th>
+<th>内联元素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>块元素会在页面中独占一行</td>
+<td>行内元素不会独占页面中的一行，只占自身的大小</td>
+</tr>
+<tr>
+<td>可以设置width,height属性</td>
+<td>width,height属性无效</td>
+</tr>
+<tr>
+<td>一般块级元素可以包含行内元素和其他块级元素</td>
+<td>一般内联元素包含内联元素，不包含块级元素</td>
+</tr>
+</tbody>
+</table>
+<p>常见块级元素：<code>div,form,h1~6,hr,p,table,ul...</code></p>
+<p>常见内联元素：<code>a,b,em,i,span,strong...</code></p>
+<p>行内块级元素：<code>button,img,input...</code>
+   - <code>&lt;div&gt;&lt;/div&gt;</code>容器标签，给网页分块，使布局更清晰
+    <img alt="" src="../../img/web_notes_img/h5%E6%97%A7%E6%A0%87%E7%AD%BE.png" />
+    <img alt="" src="../../img/web_notes_img/h5%E6%96%B0%E6%A0%87%E7%AD%BE.png" />
+    上图中<code>&lt;header&gt;&lt;/header&gt;</code>表示头部，<code>&lt;nav&gt;&lt;/nav&gt;</code>导航，<code>&lt;section&gt;&lt;/section&gt;</code>章节、页眉、页脚等，<code>&lt;aside&gt;&lt;/aside&gt;</code>侧边栏，<code>&lt;footer&gt;&lt;/footer&gt;</code>脚部，<code>&lt;article&gt;&lt;/article&gt;</code>独立完整的内容块</p>
+<h2 id="css">css部分</h2>
+<ol>
+<li>
+<p>css语法规则：</p>
+<pre><code>&lt;head&gt;
+   &lt;style&gt; //写在&lt;head&gt;里
+       h1 { //选择器
+       color: blue; //一条声明 属性：值
+       font-size: 12px;
+       }
+   &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+</li>
+<li>
+<p>css的不同样式
+    <ul>
+    <li>内联样式（行内样式）</p>
+<pre><code>        &lt;p style="background: orange;font-size: 24px;"&gt;CSS&lt;/p&gt;
+</code></pre>
+<p></li>
+<li>内部样式（多个页面不适合）</p>
+<pre><code>        &lt;style&gt; 
+            h1 {
+            background: orange;
+            }
+        &lt;/style&gt;
+</code></pre>
+<p></li>
+<li>外部样式（在<code>&lt;head&gt;</code>里加入<code>&lt;link&gt;</code>标签）</p>
+<pre><code>        &lt;link rel="stylesheet" type="text/css" href="./xxx.css"&gt; //xxx.css是外部的css文件
+</code></pre>
+<p></li>
+</ul></p>
+</li>
+<li>
+<p>选择器类型
+    <ul>
+        <li>全局选择器（一般做样式初始化）</p>
+<pre><code>        * {  // *通配符
+            margin: 0;
+            padding: 0;
+        }
+</code></pre>
+</li>
+<p><li>元素选择器（标签选择器，一般描述元素的“共性”）：将上述代码的*替换成p,h1等标签即可</li>
+<li>类选择器（针对你想要的标签使用，类名不能以数字开头，类选择器可以被多种标签使用，同一个标签可以使用多个类）</p>
+<pre><code>    &lt;p class="oneclass"&gt;你好&lt;/p&gt;
+    // &lt;h1 class="oneclass" class="twoclass"&gt;你好&lt;/h1&gt; 是错误的，实际只会让第一个class生效
+    &lt;h2 class="oneclass twoclass"&gt;你好&lt;/h2&gt;
+    .oneclass{
+        width:800px;
+    }
+    .twoclass{
+        color:red;
+    }
+</code></pre>
+<p></li>
+<li>局部“个性”<strong>优先于</strong>全局</li>
+<li>ID选择器：ID名称不能以数字开头，且<strong>只能使用一次</strong>，优先级最高</p>
+<pre><code>    &lt;style&gt;
+        #mytext{
+            color:red;
+            font-size:30px;
+        }
+    &lt;/style&gt; // 写在&lt;head&gt;里
+          &lt;p id="mytext"&gt;你好&lt;/p&gt; // 在&lt;body&gt;中使用时
+</code></pre>
+<p></li>
+<li>合并选择器：不同类型的标签使用同一样式</p>
+<pre><code>p,h3{
+    height:30px;
+}
+</code></pre>
+<p></li>
+<li>选择器的优先级（css中权重用数字来衡量）：行内样式 &gt; id选择器 &gt; 类选择器 &gt; 元素选择器</p>
+<table>
+<thead>
+<tr>
+<th>选择器类型</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>元素选择器</td>
+<td>1</td>
+</tr>
+<tr>
+<td>class选择器</td>
+<td>10</td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>100</td>
+</tr>
+<tr>
+<td>内联样式</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p>如果有两个相同优先级的选择器，那么就按顺序生效，后面的会把前面的覆盖
+</li>
+</ul></p>
+</li>
+<li>
+<p>color的设置方式：
+    <ul>
+    <li>英文描述red,blue</li>
+    <li>十六进制描述#0000ff（推荐）</li>
+    <li>红绿蓝rgb(0,255,0)</li>
+    <li>rgba（a表示透明度，0~1，1是不透明）</li>
+    </ul></p>
+</li>
+<li>
+<p>关于字体：Chrome浏览器可接受的最小字体是12px</p>
+<p><code>font-weight="normal/bold/bolder/lighter/100~900"</code>设置文字粗细（粗/更粗/更细/400默认，900bold，Chrome浏览器上最高能显示700）</p>
+<p><code>font-style="normal/italic"</code>设置斜体</p>
+<p><code>font-family</code>指定字体样式<code>font-family:"Microsoft YaHei","Simsun","Simhei";</code></p>
+</li>
+<li>
+<p>关于背景：</p>
+<pre><code>&lt;div class="box"&gt;&lt;/div&gt;
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: #ffff00; // 设置背景颜色
+    background-image: url("img/img1.jpg"); // 只能以左上角为基准显示部分图片，太宽太长了又会重复填充图片
+    background-repeat: repeat/repeat-x/repeat-y/no-repeat; // 默认平铺repeat/水平方向平铺/...
+    background-size: 1200px (1000px)/cover/contain; // 设置背景图片的宽度、高度（也可用百分比表示）
+    // （最常用）多用cover在保持图片比例的情况充满整个区域（图片可能有裁剪），contain是不裁剪图片尽量充满整个区域
+    background-position: left/right/center top/center/bottom / x% y% / xpos ypos(px);
+    // 默认left top(0% 0%)，center center最常用
+}
+</code></pre>
+</li>
+<li>
+<p>文本属性：</p>
+<pre><code>h1{
+    text-align: left/right/center; // 调整对齐方式，默认left居左
+    text-decoration: underline/overline/line-through; // 下划线，上划线，删除线
+    text-transform: capitalize/uppercase/lowercase; //  每个单词开头大写/所有单词大写/所有单词小写
+    text-indent: 50px; // 首行文本缩进（可以为负值，就是向前多占几格），两个字是30px
+}
+</code></pre>
+</li>
+<li>
+<p>表格属性：</p>
+<pre><code>table,td{
+    border: 1px solid red; // 边框粗细 实心/空心 颜色
+} // 这样是双线框
+
+table{
+    border-collapse: collapse; // 添加折叠边框，边框就是单线的了
+    width: 500px;
+    height: 300px; // 默认表格大小是根据内容字体大小决定的
+}
+
+td{
+    text-align: left/center/right;
+    vertical-align: top/center/bottom; // 垂直对齐方式
+    padding: 20px (10px);
+    // 内容填充与表格边框的距离，自动把表格撑开，第一个值代表上下边距，第二个代表左右，第二个不写就是默认和第一个一样
+    background-color: #555555; // 单元格填充底色
+    color: #ffffff; // 单元格内容文字颜色
+}
+</code></pre>
+</li>
+<li>
+<p>关系选择器：</p>
+<ul>
+<li>
+<p>后代选择器：<code>E F{}</code>表示E下的所有F元素（儿子孙子都算）</p>
+<pre><code>ul li{
+   color:green;
+} // ul内嵌套的ul或者ol的li标签也会生效
+</code></pre>
+</li>
+<li>
+<p>子代选择器：<code>E&gt;F {}</code>只对E下直接一层的F元素生效</p>
+</li>
+<li>相邻兄弟选择器：<code>E+F {}</code>选择紧跟在E元素后面的第一个F元素</li>
+<li>通用兄弟选择器：<code>E~F {}</code>选择在E元素后面的所有F元素</li>
+</ul>
+</li>
+<li>
+<p>CSS盒子模型（Box Model）：margin外边距（浏览器默认有8px），border边框，padding内边距（会把原来定好大小的——如div元素——给撑大，可以通过<code>padding-left/right/top/bottom</code>单独设置不同的值，margin亦可），content实际内容。
+语法和table中的一样。</p>
+<p><img alt="" src="../../img/web_notes_img/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.png" /></p>
+</li>
+<li>
+<p>CSS3弹性盒子模型（flex box）</p>
+<pre><code>&lt;head&gt;
+    &lt;style&gt;
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: #555;
+            display: flex; // 在父元素上设置弹性盒子，默认内容横向摆放（没设置弹性盒子默认纵向，按照块级元素规则）
+            flex-direction: row/row-reverse/column/column-reverse;
+            // 左对齐（默认）/右对齐，从后往前排，最后一项排在最前面/纵向排列/纵向反转，最后一项排在最上面
+            justify-content: flex-start/flex-end/center; // 居上（默认）/居下/居中摆放
+            align-items: flex-start/flex-end/center; // 居左/居右/居中摆放
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            flex:2; // 可以理解为占比，就不用根据父元素再设置宽度了（宽度失效）
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            flex: 2;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            flex: 1;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="containter"&gt;
+        &lt;div class="box1"&gt;&lt;/div&gt;
+        &lt;div class="box2"&gt;&lt;/div&gt;
+        &lt;div class="box3"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+</li>
+<li>
+<p>文档流：（标准流：块元素自上而下摆放，内联元素从左到右 <strong>问题</strong>：高度不同时默认底部对齐；空格折叠；元素无间隙，除非换行写）</p>
+<p>脱离文档流！</p>
+<ul>
+<li>
+<p>浮动</p>
+<pre><code>&lt;head&gt;
+    &lt;style&gt;
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            float: left/right; // 向左浮动就会覆盖在container的左上角（两层），向右就是浮动到整个页面的右上角
+        }
+        .container{
+            width: 400px;
+            height: 400px;
+            // 标准流下：宽度不设置就默认为页面宽度，如果不设置height就默认设置为内部box撑开的高度
+            // 脱离标准流后，（默认）父元素就没了，塌陷
+            background-color: yellow;
+        }
+        text{
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+        } // 如果后续元素不设置float那么就会在底层被覆盖
+        img{
+            width: 300px;
+            float: left;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="box"&gt;&lt;/div&gt;
+    &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;img&gt;
+    &lt;img&gt; // 此时两张图片之间没有空隙
+&lt;/body&gt;
+</code></pre>
+<p>浮动还可以改变不同的容器div排列的方式（如给<code>ul li{float:left;}</code>就可以把无序列表变成水平布局，达成水平导航的效果）</p>
+<p>如果外部宽度不够，就会被强制挤到下一行里</p>
+<p><strong>浮动的副作用</strong>：浮动元素会造成父元素塌陷；影响后续元素</p>
+<p>如何清除浮动？</p>
+<p>①直接给父元素设置高度（<strong>但</strong>如果父元素内塞了一个不浮动的元素还是会受到影响）</p>
+<p>②给受影响元素添加<code>clear: left/right/both;</code>属性清除左/右浮动</p>
+<p>③（使用广泛）如果父元素塌陷且影响到了同级元素，不能设置父元素高度时，可以在父元素添加<code>overflow: hidden;(clear: both;)</code>属性</p>
+<p>④上述情况还可以用伪对象方式处理。</p>
+<pre><code>    &lt;style&gt;
+        .container{
+            width: 500px;
+            background-color: #666;
+        }
+        .container::after{
+            content:"";
+            display: block; // display设置为none就是不显示
+            clear: both;
+        } // 伪对象
+    &lt;/style&gt;
+</code></pre>
+</li>
+<li>
+<p>定位<code>position: relative/absolute/fixed</code>，其中绝对定位和固定定位可以脱离文档流</p>
+<pre><code>div{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position: relative;
+    left: 200px; // 相对定位
+    right/top/bottom: 200px; // 控制距离上下左右
+}
+
+.box1{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position: absolute; // 绝对定位
+    left: 200px; // 同样同上下左右来标定位置
+}
+.box2{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}
+.box3{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    position: absolute;
+    left: 200px;
+} // 每设置一个绝对定位就增加一个图层，会互相压盖，而浮动只有两层
+
+.box1{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position: fixed; // 固定定位
+    left: 200px; // 同样同上下左右来标定位置
+} // 一般一个页面也就用一处，作用是不管页面如何滚动始终固定在哪个位置
+</code></pre>
+</li>
+</ul>
+<p>设置定位后，相对定位和绝对定位都是相对于具有定位的父级元素进行调整，如果父级元素不存在定位，就逐级向上寻找直到顶层文档。</p>
+</li>
+<li>
+<p><code>z-index</code>属性的数值可以调整谁覆盖谁，值大的盖住小的。</p>
+</li>
+<li>
+<p><code>border-radius</code>属性（单位px）可以设置圆角效果，要变成圆形就写成100%。</p>
+<p>一个值：四个角</p>
+<p>两个值：第一个值表示左上&amp;右下，第二个值左下&amp;右上；</p>
+<p>三个值：左上 左下&amp;右上 右下</p>
+<p>四个值：左上 右上 右下 左下</p>
+</li>
+<li>
+<p><code>box-shadow:h-shadow v-shadow blur color;</code>添加阴影：水平、垂直阴影的位置（必选）px，负数表示向左上投影，模糊距离px，阴影颜色</p>
+</li>
+<li>
+<p>在<code>&lt;style&gt;</code>中用<code>@keyframes</code>创建动画</p>
+<pre><code>    @keyframes name{ // 给动画命名name
+        from/0%{
+            css样式
+        }
+        percent{
+            css样式
+        } // 可以添加多个percent
+        to/100%{
+            css样式
+        }
+    }
+</code></pre>
+<p>用<code>animation</code>执行动画：</p>
+<pre><code>    div{
+        animation:name duration timing-function delay iteration-count direction animation-play-state;
+    }
+    div:hover{
+        background-color: coral; // 鼠标悬停在上面会显示成橘色
+        animation-play-state: paused;
+    }
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name动画名称</td>
+<td>/</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>3s</td>
+</tr>
+<tr>
+<td>执行动画的时间</td>
+<td>ease（逐渐变慢，默认）/linear（匀速）/ease-in（加速）/ease-out（减速）/ease-in-out（先加速后减速）</td>
+</tr>
+<tr>
+<td>delay延迟</td>
+<td>5s(ms)</td>
+</tr>
+<tr>
+<td>iteration</td>
+<td>数字（不写就是默认一次）</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>normal（默认向前播放）/alternate（偶数次向前播放，奇数次反方向播放）</td>
+</tr>
+<tr>
+<td>动画的播放状态</td>
+<td>running（播放）/paused</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>opacity</code>透明度属性0~1</p>
+</li>
+<li>
+<p>媒体查询：能在不同的终端设备下展示不同的效果</p>
+<p><code>&lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;</code>标签使用设备的宽度作为视图宽度并<strong>禁止初始的缩放</strong></p>
+<pre><code>    @media screen and (max-width: 768px) {
+        .box{
+            background-color:blue;
+        }
+    } // 手机
+    @media screen and (min-width: 768px) and (max-width: 996px) {
+        .box{
+            background-color: green;
+        }
+    } // 平板
+    @media screen and (min-width:996px) {
+        .box{
+            background-color: red;
+        }
+    } // 电脑
+</code></pre>
+</li>
+<li>
+<p>CSS-Sprite雪碧图，精灵图：零星图片-&gt;包含到大图中，用位置提取；减少了图片的字节，减少了网页的http请求，提高了网页性能。</p>
+<pre><code>    &lt;span class="icon1"&gt;&lt;/span&gt;
+    &lt;span class="icon2"&gt;&lt;/span&gt;
+    .icon1{
+        display: block; // block让一个行内元素变成块级元素，inline就是行内元素
+        width: 45px;
+        height: 70px;
+        background-image: url(1.png)
+        background-position: -10px 0; 
+    }
+</code></pre>
+</li>
+<li>
+<p>字体图标：加载速度快，减少http请求，兼容性高。在<a href="https://iconfont.cn/">阿里字体图标库</a>下载代码，下载的文件中demo.html里推荐用font-class方式</p>
+</li>
+</ol>
+<h2 id="javascript">JavaScript部分</h2>
+<ol>
+<li>标识符是识别各种变量名的名称（如变量名），可用字母$_和数字（不能开头）组成（中文是合法的标识符，但不建议使用），不能是一些保留关键字。</li>
+<li>js引擎的运行方式：先解析代码，获得所有被声明的变量，然后再一行行运行。所以所有变量的声明语句（只创建了一个名字）都会被提到最前面，也就是“变量提升”。</li>
+<li>引入js的方式：（都是在<code>&lt;body&gt;</code>中加入）<ul>
+<li>嵌入html文件：<code>&lt;script&gt;&lt;/script&gt;</code>标签写js</li>
+<li>引入本地独立js文件：<code>&lt;script (type="text/javascript") src="./myjs.js"&gt;&lt;/script&gt;</code></li>
+<li>引入网页来源js文件：最常见的是<a href="http://code.jquery.com">jquery的库</a><code>&lt;script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;</code>检查时在network处刷新，选择All查看是否有js资源</li>
+</ul>
+</li>
+<li>单行注释：<code>//</code> 多行注释：<code>/* */</code>（<code>Alt+Shift+A</code>多行注释快捷键） 嵌入html文件的注释：<code>&lt;!-- xxxxx --&gt;</code></li>
+<li>
+<p>输出方式：</p>
+<pre><code>    alert("内容"); // 会弹出对话框
+    document.write("内容"); // 输出到页面（换行用document.write("&lt;br&gt;");
+    console.log("内容"); // 打印到控制室（使用最频繁），可在网页的“检查”时打印出
+</code></pre>
+</li>
+<li>
+<p>六种数据类型，ES6新增了第七种Symbol类型和第八种BigInt类型。</p>
+<p>原始类型（基础类型）：数值（数字）、字符串、布尔值；</p>
+<p>合成类型（复合类型）：对象；</p>
+<pre><code>    var user={
+        age:19,
+        name:"me",
+        marriage:false,
+    }
+</code></pre>
+<p>undefined和null是特殊类型，null一般代表对象为空，undefined一般代表数值为“没有”。</p>
+</li>
+<li>
+<p><code>typeof varient</code>运算符判断数据类型（返回“对象”的话不太准确，因为null/{}/数组等也可以返回object）</p>
+</li>
+<li><code>===</code>表示严格比较（数值和类型）如<code>10=="10"-&gt;true,10==="10"-&gt;false</code>，<code>!=,!==</code>同理；非布尔值也可以取反成为布尔值（NaN约等于0）。</li>
+<li>字符串和数字相加会得到一个字符串（数字作为字符串添加到原字符串末尾），字符串单双引号可以相互交替嵌套，转义规则相同；字符串默认写在一行内，换行要加转义符\；<code>str.length</code></li>
+<li>字符串方法<ul>
+<li><code>str.charAt(n)</code>可以返回字符串第n个位置的字符（从0开始），如果n越界就返回空字符串</li>
+<li><code>s1.concat(s2,s3)</code>返回s1和s2，s3（参数数量不限）合并的字符串，原字符串不变；会将数据型变量转换为字符串型，但原变量类型不变；直接用<code>s3=s1+s2</code>也可以实现。但<code>concat</code>不会做运算，<code>+</code>会从左到右先做运算再变成字符串</li>
+<li><code>s1.substring(n1,n2)</code>表示截取下标n1~n2（不包含第n2个位置）的部分，若省略参数n2就是从第n1个位置到结尾，若参数为负数就自动转换成0，若n2&lt;n1那就自动转换顺序；</li>
+<li><code>substr</code>括号内的第一个参数是起始位置，第二个参数是提取的字符串长度，若省略第二个参数就默认到结尾，若只有一个参数且为负数，那么就从原字符串末尾开始数（如<code>var s1="helloworld";s1.substr(-5)就是"world"</code>），若第二个参数为负数，那就自动转换成0，返回空字符串；</li>
+<li><code>s1.indexOf(s2,n)</code>返回s1中（从第n个位置开始，可省略）第一次出现完整s2（不能断断续续）的位置，未匹配成功则返回-1，一般用这个方法来判断是否存在某字符串</li>
+<li><code>s1.trim()</code>用于去掉字符串两端的空格、换行符、回车符、制表符等，返回新字符串，不改变原字符串；ES6的新方法<code>trimEnd()/trimStart()</code>可以单独去掉字符串尾部、头部空格</li>
+</ul>
+</li>
+<li>数组方法<ul>
+<li><code>"a|b|c".split("|",n)</code>返回<code>['a','b','c']</code>，若括号中为空字符串，则返回每个单个字符的数组，若没有参数则返回原字符串；n为限定返回的成员数（默认取前几个）</li>
+<li>数组外加中括号，可以放任意类型混合，先定义再赋值或先赋值都可以，数组嵌套数组也可以（多维数组），<code>length</code>属性可以返回数组长度，数组越界返回<code>undefined</code>，数组的遍历可以用for/while/for(var i in a)</li>
+<li><code>typeof</code>碰到数组返回object，<code>Array.isArray(arr)</code>可以判定是否是数组，返回布尔值</li>
+<li><code>arr.push(obj1,obj2)</code>可以向原数组添加多个元素，并返回现在数组的长度；<code>pop()</code>删除数组最后的一个元素并返回该元素；<code>shift()</code>删除数组第一个元素并返回该元素，空数组则返回<code>undefined</code>，可以用来遍历并清空整个数组；<code>unshift()</code>在头部添加元素并返回数组长度</li>
+<li><code>['a','b','c'].join("|")</code>返回a|b|c，碰到undefined或者null则转换成空字符串</li>
+<li><code>s1.concat(s2)</code>可以合并数组s2到s1，返回新数组，原数组不变，也有和<code>push</code>一样的用法和作用，主要应用于：上拉加载，合并数据</li>
+<li><code>reverse()</code>方法可以颠倒数组的排序，返回改变后的数组<strong>（会改变原数组）</strong>，可用于翻转字符串（先把字符串split成数组再reverse再join）</li>
+<li><code>indexOf</code>用法同字符串</li>
+</ul>
+</li>
+<li>
+<p>函数的声明</p>
+<pre><code>    function add(x,y){
+        console.log(x+y);
+        return x+y;
+    }
+</code></pre>
+<p>函数名和变量名一样，也有提升——可以先调用再创建</p>
+</li>
+<li>
+<p>对象里的数据成员如果是函数，那就称它为“方法”，属性的值也可以是其他对象，可以链式调用</p>
+<pre><code>    var user={
+        name:"Josephine",
+        friends:["Oliva","Sarah"],
+        getName:function(){
+            return name;
+        },
+        jobs:{
+            type:"scientist",
+            salary:100,
+        },
+    };
+</code></pre>
+</li>
+<li>
+<p>Math对象</p>
+<ul>
+<li><code>Math.abs(n)</code></li>
+<li><code>/Math.min(n1,n2)/Math.max(n1,n2,n3)</code>min()max()括号中没有参数则为-Infinity和Infinity</li>
+<li><code>Math.floor(n)/Math.ceil(n)</code>向上下取整<code>random()</code>返回0到1之间的一个随机数</li>
+<li>生成任意范围内的随机数<pre><code>function getRandomArbitrary(min,max){
+    return Math.random()*(max-min)+min;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Date对象：以1970年1月1日零点作为时间的零点，可以表示前后各一亿天，时间单位为毫秒(Unix是20世纪70年代出现的一个操作系统，它认为这是时间纪元，js遵循此约束)</p>
+<ul>
+<li><code>Date.now()</code></li>
+<li><code>new Date(年，月，日，时，分，秒，毫秒)</code>可以创建一个Date对象，括号里只写数字n就是写n对应的时间，括号里没有参数就是获取当前时间</li>
+<li>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getTime()</td>
+<td>返回距零点的毫秒数</td>
+</tr>
+<tr>
+<td>getDate()</td>
+<td>返回每个月的几号（从1开始）</td>
+</tr>
+<tr>
+<td>getDay()</td>
+<td>返回星期几（0表示星期日）</td>
+</tr>
+<tr>
+<td>getYear()</td>
+<td>返回距离1900年的年数</td>
+</tr>
+<tr>
+<td>getFullYear()</td>
+<td>返回具体四位数的年份</td>
+</tr>
+<tr>
+<td>getMonth()</td>
+<td>返回月份（0~11）</td>
+</tr>
+<tr>
+<td>getHours()</td>
+<td>返回小时（0~23）</td>
+</tr>
+<tr>
+<td>getMilliseconds()</td>
+<td>返回毫秒（0~999）</td>
+</tr>
+<tr>
+<td>getMinutes()</td>
+<td>返回分钟（0~59）</td>
+</tr>
+<tr>
+<td>getSeconds()</td>
+<td>返回秒（0~5）</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p>DOM(Document Object Model)是js操作网页的接口（只是一种接口规范，可以用任何语言实现），DOM的最小组成单位是节点，节点通过树形结构构成DOM树。</p>
+<ul>
+<li>
+<p>七种节点类型：</p>
+<blockquote>
+<p>Document：整个文档树的顶层节点</p>
+<p>DocumentType：doctype标签</p>
+<p>Element：网页的各种HTML标签</p>
+<p>Attribute：网页元素的属性（如class="right")</p>
+<p>Text：标签之间或标签所含的文本</p>
+<p>Comment：注释</p>
+<p>DocumentFragment：文档的片段</p>
+</blockquote>
+</li>
+<li>
+<p>浏览器原生提供document节点，可在<code>&lt;script&gt;&lt;/script&gt;</code>中打印<code>console.log(document)</code></p>
+</li>
+<li>有上级下级同级关系</li>
+<li>
+<p><code>Node.nodeType</code>属性对应表</p>
+<table>
+<thead>
+<tr>
+<th>节点类型</th>
+<th>对应值</th>
+<th>对应常量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文档节点(document)</td>
+<td>9</td>
+<td>Node.DOCUMENT_NODE</td>
+</tr>
+<tr>
+<td>元素节点(element)</td>
+<td>1</td>
+<td>Node.ELEMENT_NODE</td>
+</tr>
+<tr>
+<td>属性节点(attr)</td>
+<td>2</td>
+<td>Node.ATTRIBUTE_NODE</td>
+</tr>
+<tr>
+<td>文本节点(text)</td>
+<td>3</td>
+<td>Node.TEXT_NODE</td>
+</tr>
+<tr>
+<td>文档片段节点(DocumentFragment)</td>
+<td>11</td>
+<td>Node.DOCUMENT_FRAGMENT_NODE</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p>document对象：</p>
+<ul>
+<li><code>var divs = document.getElementsByTagName('div');</code>以数组形式返回在document中找到的所有div标签</li>
+<li><code>document.getElementsByClassName('container')</code></li>
+<li><code>document.getElementsByName('myname')</code>选择具有特定<code>name</code>属性的（如表单），返回一个NodeList，但使用率很低</li>
+<li><code>document.getElementById('myID')</code>只返回一个元素（因为id不能重复）</li>
+<li><code>document.querySelector('.class')</code>筛选出特定的css选择器，返回找到的第一个</li>
+<li>`document.querySelectorAll('.class')筛选多个特定的css选择器</li>
+<li><code>var text = document.createElement("p")</code>可以创建p标签等</li>
+<li><code>var content = document.createTextNode("内容“)</code>创建文本内容</li>
+<li><code>text.appendChild(content)</code>可以将内容塞到标签里</li>
+<li><code>var id = document.createAttribute("id")</code>创建属性</li>
+<li><code>id.value = "root";</code>给属性赋值</li>
+<li><code>text.setAttributeNode(id)</code>把属性赋给标签</li>
+<li>先获取标签，然后用<code>appendChild</code>把新建的标签塞进去</li>
+</ul>
+</li>
+<li>Element对象、属性：<ul>
+<li><code>Element.id</code>可以修改id属性</li>
+<li><code>className</code>属性读写class，多个class用空格隔开</li>
+<li><code>classList</code>有<code>add()/remove()/contains("class_name")/toggle()</code>方法：增加/移除/是否包含/如果存在则删除，如果不存在则添加</li>
+<li><code>xxx.innerHTML/innerText</code>是读取，也可以用来赋值，前者可以识别标签，后者会把标签识别成一个字符串</li>
+</ul>
+</li>
+<li>
+<p>Element获取元素位置：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientHeight</td>
+<td>获取元素高度加上了<code>padding</code>部分，不包括<code>border</code>、<code>margin</code></td>
+</tr>
+<tr>
+<td>clientWidth</td>
+<td>获取元素宽度同上，这两个一般用来获取页面高度<code>document.documentElement视口屏幕/body页面内容.clientHeight</code></td>
+</tr>
+<tr>
+<td>scrollHeight</td>
+<td>元素总高度，包括<code>padding</code>和溢出的不可见内容，不包括<code>border</code>、<code>margin</code></td>
+</tr>
+<tr>
+<td>scrollWidth</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>scrollLeft</td>
+<td>元素水平滚动条向右滚动的的像素数量</td>
+</tr>
+<tr>
+<td>scrollTop</td>
+<td>向下</td>
+</tr>
+<tr>
+<td>offsetHeight</td>
+<td>元素的css垂直高度，包括元素本身的高度、<code>padding</code>和<code>border</code></td>
+</tr>
+<tr>
+<td>offsetWidth</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>offsetLeft</td>
+<td>到<strong>定位</strong>父级左边界的距离（若父级没有定位，则一直往上找直到顶层文档）</td>
+</tr>
+<tr>
+<td>offsetTop</td>
+<td>上边界</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>取消浏览器左右自带的8px可以设置通用选择器padding、margin=0</p>
+</li>
+<li>css操作：<ul>
+<li><code>div.setAttribute('style',"backgroundColor:red;")</code></li>
+<li><code>var box_style = document.getElementById("box"); backgroundColor : "red";</code></li>
+<li><code>box_style.cssText = "backgroundColor:red;"</code></li>
+</ul>
+</li>
+<li>
+<p>事件处理：</p>
+<ul>
+<li>
+<p>HTML事件：缺点：html和js没有分开，不好调试</p>
+<pre><code>&lt;body&gt;
+    &lt;button onclick="demo()"&gt;按钮&lt;/button&gt;
+    &lt;script&gt;
+        function demo(){
+            console.log("click");
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+</li>
+<li>
+<p>DOM0级事件（事件基本上都有on，如onclick）：html和js分离，但无法同时添加多个事件，事件会被后面的函数给覆盖</p>
+<pre><code>&lt;button id="btn"&gt;按钮&lt;/botton&gt;
+&lt;script&gt;
+    var btn=document.getElementById("btn");
+    btn.onclick=function(){} // 括号里默认有一个Event对象的参数
+&lt;/script&gt;
+</code></pre>
+</li>
+<li>
+<p>DOM2级事件（基本没有on）：事件可以重复添加，不会被覆盖</p>
+<pre><code>btn.addEventListener("click",function(){});
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>鼠标事件：</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>按下鼠标</td>
+</tr>
+<tr>
+<td>dblclick</td>
+<td>双击</td>
+</tr>
+<tr>
+<td>mousedown</td>
+<td>按下鼠标</td>
+</tr>
+<tr>
+<td>mouseup</td>
+<td>释放按下的鼠标</td>
+</tr>
+<tr>
+<td>mousemove</td>
+<td>当鼠标在节点内部移动时触发，持续移动则连触发</td>
+</tr>
+<tr>
+<td>mouseenter</td>
+<td>进入节点触发，进入子节点不触发</td>
+</tr>
+<tr>
+<td>mouseleave</td>
+<td>离开节点触发，离开父节点不触发</td>
+</tr>
+<tr>
+<td>mouseover</td>
+<td>进入节点触发，进入子节点再次触发</td>
+</tr>
+<tr>
+<td>mouseout</td>
+<td>离开节点触发，离开父节点也触发</td>
+</tr>
+<tr>
+<td>wheel</td>
+<td>滚动滚轮</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>事件发生后会产生一个事件对象，作为参数传给监听函数</p>
+<ul>
+<li>
+<p>Event对象的target属性返回当前节点，type返回当前事件的类型</p>
+<pre><code>btn.onclick=function(e){
+    console.log(e.target);
+}
+</code></pre>
+</li>
+<li>
+<p>Event对象的preventDefault()方法取消浏览器对当前事件的默认行为（比如说原本点击链接、表单是默认跳转的），stopPropagation()阻止事件冒泡（只关注子级节点，忽略父级节点的触发）</p>
+</li>
+<li>键盘事件：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keydown</td>
+<td>按下键盘（按下有值的键就先触发keydown再触发keypress）</td>
+</tr>
+<tr>
+<td>keypress</td>
+<td>除了Ctrl、Alt、Shift、Meta等无值的键，按下其他有值的键都触发</td>
+</tr>
+<tr>
+<td>keyup</td>
+<td>松开键盘</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li></li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sayZhongWen" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
